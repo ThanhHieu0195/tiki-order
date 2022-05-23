@@ -1,0 +1,1207 @@
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:hnx="http://www.w3.org/2000/09/xmldsig#"
+  xmlns:exsl="http://exslt.org/common"
+  xmlns:inv="http://laphoadon.gdt.gov.vn/2014/09/invoicexml/v1"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>TiKi Evat Invoice</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <script
+      type="text/javascript"
+      src="https://tikicdn.com/media/js/8c758b69.js"
+    />
+    <script language="javascript" type="text/javascript">
+      /*
+              $(document).ready(function() {
+                  PrintCapaloteClienteController.Init();
+              });
+              */
+    </script>
+    <style type="text/css" media="all">
+      .line{border-top:1px solid #000;margin:3px 0 !important;line-height:3px !important}
+      canvas{display:inline-block}html{font-size:100%}i{font-size:12px}input{margin:0;vertical-align:middle}tr{page-break-inside:avoid}
+      p{orphans:0;widows:3}
+      body{margin:0;font-family:"Arial",Times New Roman,Helvetica,Arial,sans-serif;font-size:13px;line-height:20px;color:#333;background-color:#fff}[class*=span]{float:left;min-height:1px;margin-left:20px}
+      p{margin:0 0 5px}.text-left{text-align:left !important}
+      .text-right{text-align:right !important}.text-center{text-align:center !important}
+      legend{display:block;width:100%;padding:0;color:#333;border-width:0 0 1px;border-style:none none solid;border-color:-moz-use-text-color -moz-use-text-color #e5e5e5;-moz-border-top-colors:none;-moz-border-right-colors:none;-moz-border-bottom-colors:none;-moz-border-left-colors:none;border-image:none}
+      input{font-size:14px;font-weight:400;line-height:20px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;width:206px;margin-left:0}
+      p{margin:5px 0}
+      .boderRaudi{border:1px solid #000;width:98%;margin-left:6px}
+      .brBlack{border-top:1px solid #000; margin:5px 0}
+      a{text-dicorition:none}
+      @page {
+          margin-top: 40px;
+          margin-left: 40px;
+          margin-right: 40px;
+          margin-bottom: 40px;
+      }
+
+      .text-center {
+          text-align: center !important;
+      }
+      .text-left {
+          text-align: left !important;
+      }
+
+      .text-right {
+          text-align: right !important;
+      }
+
+      #hangHoa {
+          padding-top: 15px;
+      }
+
+      #hangHoa table tr td, #hangHoa table tr th {
+          border: 1px solid #000000;
+      }
+
+      .row {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          clear: both;
+          display: block;
+      }
+
+      .row .col1, .row .col2, .row .col3, .row .col4, .row .col5, .row .col6, .row .col7, .row .col8, .row .col9, .row .col10, .row .col11, .row .col12, .row .col13, .row .col14, .row .col15, .row .col16, .row .col17, .row .col18, .row .col20 {
+          display: block;
+          float: left;
+          padding: 0;
+          margin: 0;
+      }
+      .row:after{clear:both}.row:after,.row:before{
+          content:"";display:table;line-height:0
+      }
+
+
+      .fixPage {
+      display: none;
+      }
+
+
+      .container{
+          width: 867px;
+          font-size: 12px;
+          line-height: 22px;
+          font-family: Arial;
+          padding: 0px;
+          border-radius: 0px;
+          margin: 0 auto;
+
+          position: relative;
+          display: table;
+          color:#000;
+          background-position: 50% 50%;
+
+
+          background-repeat: no-repeat;
+          background-position: center 580;
+      }
+      .breackPage {
+          page-break-after: always;
+      }
+
+      .displayPage {
+          border-bottom:0px  solid #000;
+          border-right:0px  solid #000;
+          border-left:0px  solid #000;
+          display:block;
+      }
+
+      #footerFix {
+          display: table;
+      }
+
+
+
+      .table {border-spacing:0;width:98%;margin:0px 7px ;font-size:12px;color:#000;}
+      .table {border-style:solid solid solid solid;border-width:1px 1px 1px 1px}
+      .table th{padding:2px;text-align:center;}
+      .table th{border-bottom:1px solid #000;font-weight:700;border-left:1px solid #000;}
+      .table th:last-child{border-right:1px solid #000}
+      .table tbody tr th:last-child{border-right:0px solid #000}
+      .table tbody tr th:first-child{border-left:0px solid #000}
+      .table th{line-height:17px}
+
+
+      .table td{padding:2px;text-align:left;vertical-align:top;border-left:1px solid #000}
+      .table td{border-top:1px solid #DDD}
+      .table tbody tr td:last-child{border-right:1px solid #000}
+      .table tbody tr td:first-child{border-left:1px solid #000}
+      .table tbody tr:last-child &gt; td{border-top:1px solid #ddd;}
+
+
+      .table-all-border {border-spacing:0;width:100%}
+      .table-all-border td{padding:2px;border-left:1px solid #000;border-top:1px solid #000}
+      .table-all-border tbody tr td:last-child{border-right:1px solid #000}
+      .table-all-border tbody tr:last-child &gt; td{border-top:1px solid #000;}
+      .table td{line-height:21px}
+
+      .tdFixBD{border-top:1px solid #DDD;
+
+
+      white-space:normal;
+      }
+      table{max-width:100%;background-color:transparent;border-collapse:collapse;border-spacing:0;}
+
+
+      .fixTa{
+          color:#000;width:98%;margin-left:7px;margin-right:7px;
+          font-size:13px;background-color:transparent;
+          border-collapse:collapse;
+      }
+
+      .fixTable,.sumTable{
+          color:#000;width:98%;margin-left:7px;
+          font-size:12px;background-color:transparent;border-collapse:collapse;border-spacing:0;
+          border-top:1px solid #000;
+          border-bottom:1px solid #000;
+          border-left:0px solid #000;
+          border-right:1px solid #000;
+          -moz-border-top-colors:none;-moz-border-right-colors:none;-moz-border-bottom-colors:none;-moz-border-left-colors:none;border-image:none;border-collapse:separate;border-radius:0px
+      }
+      .fixTable td{padding:2px}
+      .fixTable td{padding:2px;text-align:left;vertical-align:top;border-left:1px solid #000}
+      .fixTable td{border-top:1px solid #DDD}
+      .fixTable tbody tr td:last-child{border-right:0px solid #000}
+      .fixTable tbody tr td:first-child{border-left:1px solid #000}
+      .fixTable tbody tr:last-child &gt; td{border-top:1px solid #ddd;}
+      .abcdef{
+          border: 3px none #000000;
+          font-weight: bold;
+          font-size: 40px;
+          position: absolute;
+          top: 490px;
+          left: 69px;
+          width: 600px;
+          background: none;
+          z-index: -1;
+
+      }
+
+      .invName{
+          text-align:center;font-size:20px;line-height:25px;font-weight:700;margin:0 0 3px;text-transform:uppercase
+      }
+      .textEvat{
+          position: absolute;
+          top:250px;
+          display: block;
+          right:-12px;
+          font-style: italic;
+          font-size: 11px;
+          width:13px;
+      }
+      .boderTop{
+          border-top:1px solid #000 !important;
+      }
+
+      .boderLe{
+          border-left:1px solid #000 !important;
+      }
+      .boderRi{
+          border-right:1px solid #000 !important;
+      }
+      .boderAll{
+          border:1px solid #000 !important;
+      }
+      .phathanh{
+          position:absolute;
+          opacity:0.8;
+          filter:alpha(opacity=100);
+          top:297px;
+          left:180px;
+          width:300px;
+          height:auto;
+          z-index:1;
+          background: none;
+      }
+      .TitleHD {
+          text-transform: uppercase;
+          font-size: 19px;
+          font-weight: 500;
+
+      }
+      .nom{
+          font-weight: normal !important;
+
+      }
+
+      .maginHeader{
+          display: table;  width: 100%;margin: 0;padding-top:0px;clear: both; height:0px;color:#fff;border-top:0px solid #000;margin-bottom: 0px
+      }
+      .maginHeaderTop{
+          display: table;  width: 100%;margin: 0;padding-top:0px;clear: both; height:0px;color:#fff;border-top:0px solid #000;margin-bottom: 30px
+      }
+      .maginHeaderMin{
+          display: table;  width: 100%;margin: 0;padding-top:10px;clear: both; height:10px;color:#fff;
+      }
+      .border2{
+          border-left:0px solid #000; border-right:0px solid #000;padding:0px;margin-right:0px;display:table;width:100%;
+          }
+      .wallperBg{
+          position: relative;
+      }
+      .boderNew{
+          border-width:1px 1px 0 1px;border-style:solid
+      }
+
+      .wallperTable{
+          border-left:0px solid #000;border-right:0px solid #000;
+      }
+      .marginTopDiv{
+          margin-top:20px;
+      }
+
+      .span12{width:800px}.span9{width:800px}.span8{width:600px}.span6{width:460px}.span4{width:300px}.span3_1{width:200px}.span3{width:200px}.row-fluid{width:100%}.row-fluid [class*=span]{display:block;float:left;width:100%;margin-left:2.12766%;box-sizing:border-box}.row-fluid .span12{width:100%}.row-fluid .span9{width:74.4681%}.row-fluid .span8{width:53.191%}.row-fluid .span4{width:31.9149%}.row-fluid .span3{width:21.276%} .span13{width:780}.row-fluid
+
+      strong{font-size:10px}
+      .invName{text-align:center;font-size:13px;font-weight:700;margin:0 0 3px;text-transform:uppercase}legend{border-bottom-color:#DDD;text-align:center;line-height:16px;font-size:14px;font-weight:700;margin-bottom:8px}.table td,.table th{line-height:10px}.table-bordered&gt;tbody&gt;tr.thead&gt;th{text-align:center}.table tr.thead th{vertical-align:middle}.table{margin-bottom:0px}.table td.text-right{text-align:right}.table td.text-center{text-align:center}.row-fluid [class*=span]:first-child{margin-left:0}.row-fluid .span6{width:48.9362%; margin-top:10px;}.row-fluid [class*=span]{min-height:12px}.footer{font-style:italic;font-weight:700;margin-bottom:0;font-size:13px}.row-fluid:after{clear:both}.row-fluid:after,.row-fluid:before{content:"";display:table;line-height:0}.pull-right[class*=span],.row-fluid .pull-right[class*=span]{float:right}.percentage:after{content:" %"}tr:last-child td{border-bottom:none}@media print{.container{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}.no-print{display:none!important}}.divButton{margin-right:auto;margin-left:auto;width:700px;line-height:16px;padding:10px}.divButton .button{float:right}.divButton:after,.divButton:before{content:"";display:table;line-height:0}.divButton:after{clear:both}.button{border-top:1px solid #96d1f8;background:#65a9d7;background:-webkit-gradient(linear,left top,left bottom,from(#3e779d),to(#65a9d7));background:-webkit-linear-gradient(top,#3e779d,#65a9d7);background:-moz-linear-gradient(top,#3e779d,#65a9d7);background:-ms-linear-gradient(top,#3e779d,#65a9d7);background:-o-linear-gradient(top,#3e779d,#65a9d7);padding:5px 10px;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;-webkit-box-shadow:rgba(0,0,0,1)0 1px 0;-moz-box-shadow:rgba(0,0,0,1)0 1px 0;box-shadow:rgba(0,0,0,1)0 1px 0;text-shadow:rgba(0,0,0,.4)0 1px 0;color:#fff;font-size:14px;font-family:Georgia,serif;text-decoration:none;vertical-align:middle}.button:hover{border-top-color:#28597a;background:#28597a;color:#ccc;cursor:pointer}.button:active{border-top-color:#1b435e;background:#1b435e}[class*=" icon-"],[class^=icon-]{background-image:url(../img/glyphicons-halflings.png);background-position:14px 14px;background-repeat:no-repeat;display:inline-block;height:16px;line-height:16px;margin-top:1px;vertical-align:text-top;width:14px}.icon-white{background-image:url(../img/glyphicons-halflings-white.png)}.icon-print{background-position:-96px -48px}
+      .em{
+          font-size:12px;
+          display:none;
+      }
+
+      .invoice_background{
+          opacity: 0.3;
+          filter: alpha(opacity=100);
+          width:250px;
+          background: none
+          z-index: 1;
+          position:absolute;
+          display: block;
+          margin-top:320px;
+          margin-left: 275px;
+      }
+      .next-page { page-break-inside:always;  page-break-after:always}
+      .bodertable
+      {
+          border: 1px solid #8F9AA3;
+          border-collapse: collapse;
+          padding-bottom: 2px;
+          padding-left: 5px;
+          padding-right: 2px;
+          padding-top: 0px;
+      }
+
+      .nom{
+          font-weight: normal !important;
+      }
+      .boderTop{
+          border-top: 1px solid #000 !important;
+      }
+      .textFirebase{
+          position: absolute;
+          top:250px;
+          display: block;
+          right:-230px;
+
+          font-size:11px;
+          -ms-transform: rotate(270deg); /* IE 9 */
+          -webkit-transform: rotate(270deg); /* Safari */
+          transform: rotate(270deg); /* Standard syntax */
+
+      }
+      .textFirebase2{
+          position: absolute;
+          top:250px;
+          display: block;
+          right:0px;
+          font-style: italic;
+          font-size: 12px;
+
+          -ms-writing-mode:bt-lr;
+          -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+
+      }
+      .phathanh{
+          position:absolute;
+          opacity:0.8;
+          filter:alpha(opacity=100);
+          top:104px;
+          left:182px;
+          width:144px;
+          height:auto;
+          z-index:1;
+          background: none;
+      }
+      .logo{}
+      .boder{
+          border: solid 1px;
+          margin-left: 7px;
+          margin-right: 9px;
+      }
+      .boderfull{
+          border: solid 1px;
+      }
+      .boderleftrighy{
+          boder-left: solid 1px;
+          boder-right: solid 1px;
+      }
+      .barcode{
+          font-weight: normal;
+          font-style: normal;
+          line-height:normal;
+          sans-serif;
+          font-size: 12pt
+      }
+    </style>
+    <script>
+      function getHeight(element1, width) {
+        var element = element1.cloneNode(true);
+        if (width != 0) {
+          element.style.width = width;
+        }
+
+        element.style.visibility = "hidden";
+        document.body.appendChild(element);
+        var height = element.offsetHeight + 0;
+        document.body.removeChild(element);
+        element.style.visibility = "visible";
+        return height;
+      }
+
+      function loadData() {
+        //return;
+        //conver '--' in itemName to line break
+        var lstItemName = document.getElementsByClassName("tdFixBD");
+        for (var j = 0; j < lstItemName.length; j++) {
+          var itemName = lstItemName[j].innerHTML;
+          lstItemName[j].innerHTML = itemName.replace(/--/g, "<br/>");
+        }
+        try {
+          var mainElement = document.getElementById("main");
+          //Khai bao max height của mỗi page tùy thuộc vào khổ in px
+          var heightA4 = 1100;
+          var curHeight =
+            getHeight(document.getElementsByClassName("footerInvoice")[0], 0) +
+            getHeight(document.getElementsByClassName("tableHangHoa")[0], 867) +
+            getHeight(document.getElementsByClassName("headerPanel")[0], 0);
+
+          if (curHeight > heightA4) {
+            listRow = document
+              .getElementsByClassName("tableHangHoa")[0]
+              .getElementsByTagName("tbody")[0]
+              .getElementsByTagName("tr");
+            if (listRow.length <= 5) {
+              throw "no-page-break";
+            }
+          }
+
+          var xuatBoiHtmlString =
+            document.getElementById("imgXuatBoi").innerHTML;
+
+          //vong for duyet qua tat ca Invoice
+          var lisInvoices = document.getElementsByClassName("newInvoice");
+          for (var j = 0; j < lisInvoices.length; j++) {
+            var headerHtmlString =
+              lisInvoices[j].getElementsByClassName("headerPanel")[0].innerHTML;
+            var headerTableHtmlString = lisInvoices[j]
+              .getElementsByClassName("tableHangHoa")[0]
+              .getElementsByTagName("thead")[0].innerHTML;
+
+            var listRow = 0;
+            var indexRow = 0; //biến duyệt qua các dòng trong bảng hàng hóa
+            var countPage = 1; // biến đếm số trang khi breack ra
+            var maxHeightTable = 0;
+            var heightTemTable = 0;
+
+            //ve lai cac trang cua 1 invoice
+            var run = 0;
+            do {
+              run++;
+              if (run > 1000) {
+                throw "loop";
+              }
+              //add xuat boi Evat
+              var xuatBoi1 = document.createElement("div");
+              xuatBoi1.className = "wallperBg";
+              xuatBoi1.innerHTML = xuatBoiHtmlString;
+              mainElement.appendChild(xuatBoi1);
+
+              //add header vào mỗi trang****************************************************************************************************************************
+              var marginTopDiv = document.createElement("div");
+              marginTopDiv.className = "marginTopDiv";
+              mainElement.appendChild(marginTopDiv);
+
+              var tempHeader1 = document.createElement("div");
+              tempHeader1.setAttribute(
+                "id",
+                "invoice" + j + "header" + countPage
+              );
+              tempHeader1.className = "border2";
+              tempHeader1.innerHTML = headerHtmlString;
+              mainElement.appendChild(tempHeader1);
+
+              //add table dong hang vao moi trang *******************************************************************************************************************
+              // lay chieu cao toi da cua table dong hang
+              maxHeightTable = heightA4 - tempHeader1.offsetHeight;
+              var wallperTable = document.createElement("div");
+              wallperTable.className = "wallperTable";
+              var tempTable = document.createElement("table");
+
+              tempTable.setAttribute("id", "invoice" + j + "table" + countPage);
+              tempTable.className = "table table-bordered";
+              var theadTemp = document.createElement("thead");
+              theadTemp.innerHTML = headerTableHtmlString;
+              tempTable.appendChild(theadTemp);
+              var tbodyTemp = document.createElement("tbody");
+              tempTable.appendChild(tbodyTemp);
+              mainElement.appendChild(wallperTable);
+              wallperTable.appendChild(tempTable);
+              ///add dong hang vao bang
+              listRow = lisInvoices[j]
+                .getElementsByClassName("tableHangHoa")[0]
+                .getElementsByTagName("tbody")[0]
+                .getElementsByTagName("tr");
+
+              for (var i = indexRow; i < listRow.length; i++) {
+                var tr = document.createElement("tr");
+                tr.setAttribute("id", "invoice" + j + "_tr_so" + indexRow);
+                tr.innerHTML = listRow[i].innerHTML;
+                tbodyTemp.appendChild(tr);
+
+                heightTemTable = tempTable.offsetHeight;
+                if (heightTemTable >= maxHeightTable) {
+                  // remove dong cuoi cung vau add
+                  var elem = document.getElementById(
+                    "invoice" + j + "_tr_so" + indexRow
+                  );
+                  elem.parentElement.removeChild(elem);
+
+                  //Hiển thị thông tin số trang (trang 1/ tong so..)
+
+                  var displayPageString1 =
+                    "<div class='row text-center' ><div class='displayPage'>Tiếp theo trang trước; Trang " +
+                    countPage +
+                    "/<span class='maxPageInvoice" +
+                    j +
+                    "'></span></div></div>";
+
+                  if (countPage === 1) {
+                    displayPageString1 =
+                      "<div class='row text-center' ><div class='displayPage'>Trang " +
+                      countPage +
+                      "/<span class='maxPageInvoice" +
+                      j +
+                      "'></span></div></div>";
+                  }
+
+                  var displayPageElement1 = document.createElement("div");
+                  displayPageElement1.innerHTML = displayPageString1;
+                  displayPageElement1.setAttribute(
+                    "id",
+                    "invoice" + j + "_soPage" + countPage
+                  );
+                  mainElement.appendChild(displayPageElement1);
+
+                  // add brack trang
+                  var divBreack1 = document.createElement("div");
+                  divBreack1.className = "breackPage";
+                  mainElement.appendChild(divBreack1);
+
+                  heightTemTable = tempTable.offsetHeight;
+                  break;
+                }
+                indexRow++;
+              }
+
+              countPage++;
+            } while (indexRow < listRow.length);
+
+            countPage--;
+            //add footer (chu ky ben mua ben ban)
+            var elmentFooter =
+              lisInvoices[j].getElementsByClassName("footerInvoice")[0];
+            elmentFooter.setAttribute("id", "invoice" + j + "footer");
+            mainElement.appendChild(elmentFooter);
+
+            //tinh toan xem add footer vao thi co bi sang trang nua ko
+            var heightFooter = elmentFooter.clientHeight;
+            if (maxHeightTable - heightTemTable < heightFooter) {
+              //Hiển thị thông tin số trang (trang 1/ tong so..)
+
+              var displayPageString2 =
+                "<div class='row text-center' ><div class='displayPage'>Tiếp theo trang trước; Trang " +
+                countPage +
+                "/<span class='maxPageInvoice" +
+                j +
+                "'></span></div></div>";
+              if (countPage === 1) {
+                displayPageString2 =
+                  "<div class='row text-center' ><div class='displayPage'>Trang " +
+                  countPage +
+                  "/<span class='maxPageInvoice" +
+                  j +
+                  "'></span></div></div>";
+              }
+
+              var displayPageElement2 = document.createElement("div");
+              displayPageElement2.innerHTML = displayPageString2;
+              displayPageElement2.setAttribute(
+                "id",
+                "invoice" + j + "_soPage" + countPage
+              );
+              elmentFooter.parentNode.insertBefore(
+                displayPageElement2,
+                elmentFooter
+              );
+
+              //add break trang
+              var divBreack = document.createElement("div");
+              divBreack.className = "breackPage";
+              elmentFooter.parentNode.insertBefore(divBreack, elmentFooter);
+
+              countPage++;
+              //add xuat boi Evat
+              var xuatBoi2 = document.createElement("div");
+              xuatBoi2.className = "wallperBg";
+              xuatBoi2.innerHTML = xuatBoiHtmlString;
+              elmentFooter.parentNode.insertBefore(xuatBoi2, elmentFooter);
+
+              //add  header vào mỗi trang
+              var marginTopDiv1 = document.createElement("div");
+              marginTopDiv1.className = "marginTopDiv";
+              elmentFooter.parentNode.insertBefore(marginTopDiv1, elmentFooter);
+
+              var tempHeader2 = document.createElement("div");
+              tempHeader2.setAttribute(
+                "id",
+                "invoice" + j + "header" + countPage
+              );
+              tempHeader2.innerHTML = headerHtmlString;
+              tempHeader2.className = "border2";
+              elmentFooter.parentNode.insertBefore(tempHeader2, elmentFooter);
+
+              //Hiển thị thông tin số trang (trang 1/ tong so..)
+
+              var displayPageString3 =
+                "<div class='row text-center' ><div class='displayPage'>Tiếp theo trang trước; Trang " +
+                countPage +
+                "/<span class='maxPageInvoice" +
+                j +
+                "'></span></div></div>";
+              if (countPage === 1) {
+                displayPageString3 =
+                  "<div class='row text-center' ><div class='displayPage'>Trang " +
+                  countPage +
+                  "/<span class='maxPageInvoice" +
+                  j +
+                  "'></span></div></div>";
+              }
+
+              var displayPageElement3 = document.createElement("div");
+              displayPageElement3.innerHTML = displayPageString3;
+              displayPageElement3.setAttribute(
+                "id",
+                "invoice" + j + "_soPage" + countPage
+              );
+              mainElement.appendChild(displayPageElement3);
+
+              countPage++;
+            } else {
+              if (countPage === 1) {
+                var displayPageString4 =
+                  "<div class='row text-center' ><div class='displayPage'></div></div>";
+                var displayPageElement4 = document.createElement("div");
+                displayPageElement4.innerHTML = displayPageString4;
+                mainElement.appendChild(displayPageElement4);
+                countPage++;
+              } else {
+                var displayPageString4 =
+                  "<div class='row text-center' ><div class='displayPage'>Tiếp theo trang trước; Trang " +
+                  countPage +
+                  "/<span class='maxPageInvoice" +
+                  j +
+                  "'></span></div></div>";
+                if (countPage === 1) {
+                  displayPageString4 =
+                    "<div class='row text-center' ><div class='displayPage'>Trang " +
+                    countPage +
+                    "/<span class='maxPageInvoice" +
+                    j +
+                    "'></span></div></div>";
+                }
+                var displayPageElement4 = document.createElement("div");
+                displayPageElement4.innerHTML = displayPageString4;
+                displayPageElement4.setAttribute(
+                  "id",
+                  "invoice" + j + "_soPage" + countPage
+                );
+                mainElement.appendChild(displayPageElement4);
+                countPage++;
+              }
+            }
+
+            //add max page vao cac trang
+            countPage--;
+            var listMaxPage = document.getElementsByClassName(
+              "maxPageInvoice" + j
+            );
+            for (var y = 0; y < listMaxPage.length; y++) {
+              listMaxPage[y].innerHTML = countPage;
+            }
+
+            // Thêm dòng trống trong table nội dung hàng hóa
+            var tableDongHang = document.getElementById(
+              "invoice" + j + "table" + countPage
+            );
+            if (typeof tableDongHang != "" && tableDongHang != null) {
+              // truong hop trang cuoi  co bang hang hoa
+              var ft = document.getElementById("invoice" + j + "footer");
+              var hd = document.getElementById(
+                "invoice" + j + "header" + countPage
+              );
+              tableDongHang = document.getElementById(
+                "invoice" + j + "table" + countPage
+              );
+
+              var maxH = heightA4 - 15 - hd.clientHeight - ft.clientHeight - 26;
+              var run2 = 0;
+              while (maxH > 0 && tableDongHang.clientHeight < maxH) {
+                run2++;
+                if (run2 > 1000) {
+                  throw "loop";
+                }
+                var trAdd = document.createElement("tr");
+                trAdd.innerHTML =
+                  "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
+                tableDongHang
+                  .getElementsByTagName("tbody")[0]
+                  .appendChild(trAdd);
+              }
+            } else {
+              // truong hop trang cuoi khong co bang hang hoa
+              var ft = document.getElementById("invoice" + j + "footer");
+              var hd = document.getElementById(
+                "invoice" + j + "header" + countPage
+              );
+              var h1 = heightA4 - 15 - hd.clientHeight - ft.clientHeight;
+              if (h1 > 0) {
+                if (ft.getElementsByClassName("noteText").length) {
+                  ft.getElementsByClassName("noteText")[0].setAttribute(
+                    "style",
+                    "padding-top:" + h1 + "px"
+                  );
+                }
+              }
+
+              tableDongHang = document.getElementById(
+                "invoice" + j + "table" + (countPage - 1)
+              );
+              var maxH = heightA4 - 15 - hd.clientHeight - 26;
+
+              var run2 = 0;
+              while (maxH > 0 && tableDongHang.clientHeight < maxH) {
+                if (run2++ > 1000) {
+                  throw "loop";
+                }
+                var trAdd = document.createElement("tr");
+                trAdd.innerHTML =
+                  "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
+                tableDongHang
+                  .getElementsByTagName("tbody")[0]
+                  .appendChild(trAdd);
+              }
+            }
+
+            //breck trang sang invoice tiep theo
+            var divBreackEnd = document.createElement("div");
+            divBreackEnd.className = "breackPage";
+            mainElement.appendChild(divBreackEnd);
+          } //ket thuc vong for Invoice
+        } catch (err) {
+          console.log("Exception", err);
+          var mainElement = document.getElementById("main");
+          document.getElementsByClassName("tableHangHoa")[0].className =
+            "tableHangHoa table table-bordered";
+          mainElement.appendChild(
+            document.getElementsByClassName("headerPanel")[0]
+          );
+          mainElement.appendChild(
+            document.getElementsByClassName("tableHangHoa")[0]
+          );
+          mainElement.appendChild(
+            document.getElementsByClassName("footerInvoice")[0]
+          );
+        }
+        document.getElementById("main").style.display = "none";
+        document.getElementById("main").style.display = "table";
+      }
+    </script>
+  </head>
+  <body style="margin: 0; padding: 0" onload="loadData()">
+    <div id="main" class="container">
+      <img
+        class="invoice_background"
+        src="data:image/png;base64,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"
+        style="
+          opacity: 0.2;
+          width: 350px;
+          position: absolute;
+          display: block;
+          margin-top: 445px;
+          margin-left: 270px;
+        "
+      />
+    </div>
+    <div id="imgXuatBoi" class="wallperBg" style="display: none">
+      <img class="textEvat" style="display: none" src="" />
+    </div>
+    <div style="display: none" class="newInvoice">
+      <div class="headerPanel">
+        <div style="overflow: hidden; margin-top: 10px">
+          <div style="float: left; width: 73%">
+            <div style="float: left; width: 40%">
+              <img
+                src="data:image/png;base64,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"
+                style="margin-left: 5px; height: 70px"
+              />
+            </div>
+            <div
+              style="
+                float: right;
+                width: 60%;
+                text-align: center;
+                margin-top: 15px;
+              "
+            >
+              <b
+                style="
+                  font-size: 23px !important;
+                  line-height: 22px;
+                  color: red;
+                "
+              >
+                HÓA ĐƠN GIÁ TRỊ GIA TĂNG<br
+              /></b>
+              <p style="margin: 10px 0px" align="center">
+                Ngày<em class="em"> (Date)</em>
+                <span>{{orderDay}}</span> tháng<em class="em"> (month)</em>
+                <span>{{orderMonth}}</span> năm<em class="em"> (year)</em>
+                <span>{{orderYear}}</span>
+              </p>
+            </div>
+          </div>
+          <div
+            style="
+              float: right;
+              line-height: 1.4;
+              margin-top: 20px;
+              margin-right: 9px;
+            "
+          >
+            <div>Mẫu số <em class="em">(Form No.)</em>: 01GTKT0/002</div>
+            <div style="padding-top: 3px">
+              Ký hiệu <em class="em">(Serial)</em>: AT/19E
+            </div>
+            <div>
+              Số <em class="em">(No.)</em>:
+              <b style="color: red; font-size: 18px"
+                ><span>{{orderNo}}</span></b
+              >
+            </div>
+          </div>
+          <div style="clear: both; line-height: 0px"></div>
+        </div>
+        <div>
+          <table
+            class="fixTa"
+            border="0"
+            cellspacing="0"
+            cellpadding="0"
+            width="100%"
+            style="font-size: 13px; margin-top: 15px; line-height: 18px"
+          >
+            <tr>
+              <td width="100" valign="middle" nowrap="nowrap">
+                Đơn vị bán hàng
+              </td>
+              <td width="5" valign="top">:</td>
+              <td colspan="6" valign="middle">
+                <b
+                  style="
+                    font-size: 16px !important;
+                    font-weight: bold;
+                    width: 800px;
+                    color: #00b9f4;
+                  "
+                >
+                  CÔNG TY TNHH MTV THƯƠNG MẠI TI KI</b
+                >
+              </td>
+            </tr>
+            <tr>
+              <td width="100" valign="middle" nowrap="nowrap">Mã số thuế</td>
+              <td width="5" valign="top">:</td>
+              <td colspan="5" valign="middle">
+                <span
+                  style="
+                    font-weight: bold;
+                    letter-spacing: 5px;
+                    font-size: 13px;
+                  "
+                >
+                  0312388363</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td width="100" valign="top" nowrap="nowrap">Địa chỉ</td>
+              <td valign="top">:</td>
+              <td colspan="5" valign="middle">
+                <span style="line-height: 17px">
+                  52 Út Tịch, P.4, Q. Tân Bình, TP. Hồ Chí Minh, Việt Nam</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td width="100" valign="top" nowrap="nowrap">Điện thoại</td>
+              <td width="5" valign="top">:</td>
+              <td colspan="5" valign="middle">
+                <span style="line-height: 17px"> (028) 7 305 8454</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <br />
+        <div class="fixTa">
+          <div
+            style="
+              line-height: 17px;
+              padding-bottom: 5px;
+              margin-bottom: 5px;
+              border: 1px #000 solid;
+              padding-left: 10px;
+              padding-top: 5px;
+            "
+          >
+            <table style="font-size: 13px">
+              <tr>
+                <td width="140" valign="left" nowrap="nowrap">
+                  Họ tên người mua hàng<i class="em"> (Buyer's name)</i>
+                </td>
+                <td width="5" valign="top">:</td>
+                <td colspan="5" valign="left">
+                  <span>{{buyerName}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td width="140" valign="left" nowrap="nowrap">
+                  Đơn vị mua hàng<i class="em"> (Company name)</i>
+                </td>
+                <td width="5" valign="top">:</td>
+                <td colspan="5" valign="left">
+                  <span>{{buyerName}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td width="140" valign="left" nowrap="nowrap">
+                  Mã số thuế<i class="em"> (Tax code)</i>
+                </td>
+                <td width="5" valign="left">:</td>
+                <td colspan="5" valign="left">
+                  <span>-------</span>
+                </td>
+              </tr>
+              <tr>
+                <td width="140" valign="top" nowrap="nowrap">
+                  Địa chỉ <i class="em">(Address)</i>
+                </td>
+                <td valign="top">:</td>
+                <td colspan="5" valign="left">
+                  <span style="line-height: 17px">{{buyerAddress}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td width="140" valign="left" nowrap="nowrap">Điện thoại</td>
+                <td width="5" valign="left">:</td>
+                <td width="200" valign="middle" nowrap="nowrap">
+                  <span>{{buyerPhone}}</span>
+                </td>
+                <td valign="left" nowrap="nowrap">
+                  Hình thức thanh toán<i class="em"> (Method of payment)</i>
+                </td>
+                <td width="5" valign="left">:</td>
+                <td valign="middle" nowrap="nowrap">TM/CK</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div style="display: none; line-height: 1px">
+        <table class="tableHangHoa table table-bordered">
+          <thead class="text-center">
+            <tr class="thead" style="font-size: 11px; line-height: 15px">
+              <th style="width: 30px">
+                <p style="margin: 2px 2px; line-height: 15px">
+                  <span>STT</span>
+                </p>
+                <p style="margin: 2px 2px">
+                  <em class="em">(No.)</em>
+                </p>
+              </th>
+              <th style="">
+                <p style="margin: 2px 2px; line-height: 15px">
+                  <span>Tên hàng hóa dịch vụ</span>
+                </p>
+                <p style="margin: 2px 2px">
+                  <em class="em">(Description of goods/service)</em>
+                </p>
+              </th>
+              <th style="width: 50px">
+                <p style="margin: 2px 2px; line-height: 15px">
+                  <span>Đơn vị tính</span>
+                </p>
+                <p style="margin: 2px 2px">
+                  <em class="em">(Unit)</em>
+                </p>
+              </th>
+              <th style="width: 50px">
+                <p style="margin: 2px 2px; line-height: 15px">
+                  <span>Số lượng</span>
+                </p>
+                <p style="margin: 2px 2px">
+                  <em class="em">(Quantity)</em>
+                </p>
+              </th>
+              <th style="width: 80px">
+                <p style="margin: 2px 2px; line-height: 15px">
+                  <span>Đơn giá trước chiết khấu</span>
+                </p>
+                <p style="margin: 2px 2px">
+                  <em class="em">(Unit price)</em>
+                </p>
+              </th>
+              <th style="width: 80px">
+                <p style="margin: 2px 2px; line-height: 15px">
+                  <span>Tổng số tiền chiết khấu</span>
+                </p>
+                <p style="margin: 2px 2px">
+                  <em class="em" />
+                </p>
+              </th>
+              <th style="width: 90px">
+                <p style="margin: 2px 2px; line-height: 15px">
+                  <span>Thành tiền trước thuế</span>
+                </p>
+                <p style="margin: 2px 2px">
+                  <em class="em">(Amount before VAT)</em>
+                </p>
+              </th>
+              <th style="width: 80px">
+                <p style="margin: 2px 2px; line-height: 15px">
+                  <span>Thuế suất GTGT</span>
+                </p>
+                <p style="margin: 2px 2px">
+                  <em class="em">(VAT rate)</em>
+                </p>
+              </th>
+              <th style="width: 80px">
+                <p style="margin: 2px 2px; line-height: 15px">
+                  <span>Tiền thuế</span>
+                </p>
+                <p style="margin: 2px 2px">
+                  <em class="em">VAT</em>
+                </p>
+              </th>
+              <th style="width: 95px">
+                <p style="margin: 2px 2px; line-height: 15px">
+                  <span>Thành tiền sau thuế GTGT</span>
+                  <br />
+                  <em class="em">(Amount after VAT)</em>
+                </p>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <p style="margin: 2px 2px" class="text-center">1</p>
+              </th>
+              <th class="text-center">2</th>
+              <th class="text-center">3</th>
+              <th class="text-center">4</th>
+              <th class="text-center">5</th>
+              <th class="text-center">6</th>
+              <th class="text-center">7=4x5-6</th>
+              <th class="text-center">8</th>
+              <th class="text-center">9=7x8</th>
+              <th class="text-center">10=7+9</th>
+            </tr>
+          </thead>
+          <tbody style="font-size: 11px" id="mainTableBody"></tbody>
+        </table>
+      </div>
+      <div style="display: none">
+        <div class="row border2 footerInvoice">
+          <div>
+            <table
+              class="fixTa"
+              border="1px solid #000 !important"
+              style="margin-right: 2px; font-size: 12px"
+            >
+              <tbody>
+                <tr>
+                  <td height="23" colspan="6" valign="middle">
+                    <strong style="margin: 2px 2px"
+                      >Tổng cộng <em class="em">(Total amount): </em></strong
+                    >
+                  </td>
+                  <td width="92" align="right" nowrap="nowrap">
+                    <p style="margin: 2px 2px"><span>{{totalPrice}}</span></p>
+                  </td>
+                  <td width="82">
+                    <strong> </strong>
+                  </td>
+                  <td width="82" align="right" nowrap="nowrap">
+                    <p style="margin: 2px 2px"><span>{{totalTax}}</span></p>
+                  </td>
+                  <td width="97" align="right" nowrap="nowrap">
+                    <p style="margin: 2px 2px">
+                      <span>{{totalPriceWithTax}}</span>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="23" colspan="10" valign="middle">
+                    <strong style="margin-left: 100px">
+                      <b>MDH: </b>296583074</strong
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    height="23"
+                    colspan="10"
+                    valign="middle"
+                    style="margin: 2px 2px"
+                  >
+                    <div id="barcodecontainer" style="width: 3in">
+                      <div id="barcode">296583074</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="23" colspan="10" style="margin: 2px 2px">
+                    <strong
+                      >Số tiền viết bằng chữ :
+                      <span>{{textTotalPriceWithTax}}</span></strong
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            colspan="6"
+            class="text-left"
+            style="margin-left: px; height: 150px; line-height: 17px"
+          >
+            <div class="row-fluid">
+              <div class="span6">
+                <p class="text-center">
+                  <b>Người mua hàng </b>
+                  <i class="em">(Buyer)</i>
+                  <br />
+                  <i>(Ký, ghi rõ họ tên)</i>
+                  <br />
+                  <i class="em">(Sign &amp; full name)</i>
+                </p>
+                <br />
+              </div>
+              <div class="span6">
+                <p class="text-center">
+                  <b>Người bán hàng </b>
+                  <i class="em">(Seller)</i>
+                  <br />
+                  <i>(Ký, ghi rõ họ tên)</i>
+                  <br />
+                  <i class="em">(Sign &amp; full name)</i>
+                </p>
+                <a href="#" style="text-decoration: none">
+                  <div class="text-center" style="padding-top: 10px">
+                    <div
+                      id="kysoban"
+                      style="
+                        margin: 0 auto;
+                        border: solid 1px #ff0000;
+                        padding: 3px;
+                        color: #ff0000;
+                        position: relative;
+                        z-index: 1;
+                        font-size: 13px;
+                        max-width: 230px;
+                        text-align: left;
+                        line-height: 14px;
+                      "
+                    >
+                      <img
+                        style="
+                          position: absolute;
+                          z-index: -1;
+                          right: 30px;
+                          top: 8px;
+                        "
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA4CAYAAACyutuQAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAPQSURBVHja3JppSBVRFMev+TALK4LCQhOJNmiD+tJm2EZoFBUFBVFE0I6W0q5ZWNFGCpFFJZS0SJHQF0uLlg9RWB+LLNrpEWZBUdiq0//geTFcZubNe743c68Hfoze++a+fp2ZO+feMcEwDBFJpNUmCD8jmGvY/bsycejaRXSCgEw2DjnACHQCmXwcskA+shcMaCySgkM5GAPmkgy1BzSVycChCgwF2ZB5F+oLaCgzFoezYBCYApln5n7dhGaCMyAVLIDMffkDOs1yy0AN6AcKIVNj9SFdhFaDk6A7OAGZMrsPqi5ET/FtoAIkgTqwyekE1YV2gH0s9gasQna+6yq0E5Tyzy1gJXgb7iRVhbaC3abfS8ANNyeqKLSRL7NQnAdlbk9WTWg5OMj3DMVTUABadRSaD46bHvbfwFrwMZJBVBGaCE7TesbURpfdnUgHUkFoBDgHepvarkVy36gklMoymaa2JpAHfukmRGVMJRgttW8GL6Id1E+hQ2CW1FbN6xyhm9AansHMQVVAcUcH9kMoh581chR35FLzS2gwlf8gRWq/yhWB0EmoJ8tkSO304CwEbboJ7QJTLdoPgJex+hKvhBZz0SnHA3A0ll/khdBIcMSi/QfYDv7oJNQDHOONDTmoQrgd6y+MtxDtB2RZtDdLCzgthGbb3DcU+0FQJ6H+4DBItuh7xNO30EUokSuBIRZ9tPLcw5se8RFKq02I9RusJTxNW0U9VwUinhkaD6lpMRpvIGcg0aKvRdr8iJsQPaXnQaoMdOvgeHSzp9v00V70vbgLBXMNWiHuBdPBXUhNinKspWChTd9XljW8yBC9iP2AwwowitbzkCoByRGMk86Xml1cAE+8qLH+z3KQahDtO5YpXEjWQWqcy3EowwNs+ugKKPeqApan7QrTumQyqIVUUZhszQGLHPqpxHnuixCy9Fu0v65o5CbaWirly3CCxfl9eOZKshm/mf+ThF8ZCt1PG7gaDkU2Z2uL9PSn0ma4w/j0LvSVr0IsVccLL3P04pmKNgFp64le3q5zGJuyc8rrDQunl8ZUvtAW7QypnbJFrzY+s6RdXPTy3glbyyFLdMnl2VTFfcEwh3G/+JGdsMUppGhyKIjigXgZPFZOiKUu8arTbdCedKXwKdwuH4pAg8vPXuE1j7pCyBLVYuv53nCKvzxVt6qeIZJ6yLs0TkHV9E3hY0S6YqW/5qh26KeldZs2QshSK1cRjRbdVE1fFz5HNHsKTVwhyG/YqlzcY0oKUdySltOf+NkjdBUKlUb1puX1a92FfnJp9J7rNiXinwADAE4w55Whk0mGAAAAAElFTkSuQmCC"
+                        kasperskylab_antibanner="on"
+                      />
+                      Signature Valid <br />
+                      Ký bởi: CÔNG TY TNHH MTV THƯƠNG MẠI TI KI<br />
+                      Ký Ngày: <span>{{orderDay}}</span> tháng
+                      <span>{{orderMonth}}</span>
+                      năm <span>{{orderYear}}</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <span
+              >Tra cứu hóa đơn điện tử tại
+              <a href="https://tracuuhoadon.tiki.com.vn"
+                >https://tracuuhoadon.tiki.com.vn</a
+              >, mã tra cứu:<b><span>{{orderNumber}}</span></b></span
+            >
+            <br />
+            <em>(Cần kiểm tra đối chiếu khi lập, giao, nhận hóa đơn)</em>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function get_object(id) {
+        var object = null;
+        if (document.layers) {
+          object = document.layers[id];
+        } else if (document.all) {
+          object = document.all[id];
+        } else if (document.getElementById) {
+          object = document.getElementById(id);
+        }
+        return object;
+      }
+      get_object("barcode").innerHTML = DrawHTMLBarcode_EAN13(
+        get_object("barcode").innerHTML,
+        "no",
+        "cm",
+        0,
+        2.5,
+        0,
+        "bottom",
+        "center",
+        "",
+        "black",
+        "white"
+      );
+    </script>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js
+"></script>
+  <script src="./main.js"></script>
+  <script src="./price.js"></script>
+</html>

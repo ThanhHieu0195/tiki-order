@@ -1,0 +1,20 @@
+{
+  "buyer": {
+    "phone": "xxxxx",
+    "name": "xxxxxu",
+    "address": "xxxxxx"
+  },
+  "order": {
+    "year": "2022",
+    "month": "04",
+    "day": "29"
+  },
+  "items": [
+    {
+      "name": "Nước uống đẹp da Collagen Beauty Drink - hộp 30 chai giúp bổ sung Collagen giúp cải thiện nếp nhăn và độ đàn hồi của da, giúp da sáng mịn, hỗ trợ chống lão hóa da",
+      "unit": "LỌ",
+      "num": 1,
+      "price": 3250000
+    }
+  ]
+}

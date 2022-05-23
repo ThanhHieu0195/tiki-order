@@ -1,0 +1,20 @@
+{
+  "buyer": {
+    "phone": "xxxxx",
+    "name": "xxxxxu",
+    "address": "xxxxxx"
+  },
+  "order": {
+    "year": "2022",
+    "month": "05",
+    "day": "07"
+  },
+  "items": [
+    {
+      "name": "Combo 2 hộp JEX giảm đau, bảo vệ xương khớp 60 viên tặng 1 hộp 15 viên",
+      "unit": "LỌ",
+      "num": 3,
+      "price": 1440000
+    }
+  ]
+}

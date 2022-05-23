@@ -1,0 +1,20 @@
+{
+  "buyer": {
+    "phone": "xxxxx",
+    "name": "xxxxxu",
+    "address": "xxxxxx"
+  },
+  "order": {
+    "year": "2022",
+    "month": "05",
+    "day": "20"
+  },
+  "items": [
+    {
+      "name": "Blackmores Odourless Fish Oil 1000 Mini Capsules 400v - Dầu cá KHỬ MÙI tự nhiên Blackmore Úc, bổ sung omega 3",
+      "unit": "LỌ",
+      "num": 2,
+      "price": 1850000
+    }
+  ]
+}
