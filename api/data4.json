@@ -1,0 +1,26 @@
+{
+  "buyer": {
+    "phone": "xxxxx",
+    "name": "xxxxxu",
+    "address": "xxxxxx"
+  },
+  "order": {
+    "year": "2022",
+    "month": "09",
+    "day": "20"
+  },
+  "items": [
+    {
+      "name": "Dầu nhuyễn thể KRILL 56 cao cấp - Red Omega 3 công nghệ mới - liệu trình 5 tháng/ 5 hộp",
+      "unit": "LỌ",
+      "num": 1,
+      "price": 2900000
+    },
+    {
+      "name": "Selen Plus ACE (Hộp 60 viên) - Hỗ trợ tăng cường sức đề kháng, cải thiện nội tiết tố nữ, chống gốc tự do, chống oxy hóa, làm đẹp da, giúp tóc chắc khỏe - Thực phẩm chức năng thương hiệu Sanct Bernhard",
+      "unit": "LỌ",
+      "num": 2,
+      "price": 490000
+    }
+  ]
+}

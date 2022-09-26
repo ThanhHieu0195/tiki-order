@@ -1,0 +1,32 @@
+{
+  "buyer": {
+    "phone": "xxxxx",
+    "name": "xxxxxu",
+    "address": "xxxxxx"
+  },
+  "order": {
+    "year": "2022",
+    "month": "09",
+    "day": "12"
+  },
+  "items": [
+    {
+      "name": "Viên Uống Cải Thiện Cholesterol Blackmores Cholesterol Health (60 viên)",
+      "unit": "LỌ",
+      "num": 1,
+      "price": 790000
+    },
+    {
+      "name": "Thùng Yến mạch Hafer Flocken (500g x 16gói) - Deutschland (Dạng hạt cán vỡ)",
+      "unit": "THÙNG",
+      "num": 3,
+      "price": 570000
+    },
+    {
+      "name": "Ngũ Cốc Yến Mạch Nguyên Hạt Vị Cacao 400G Không Đường Tinh Luyện - CHOCO BANA GRANOLA HAPPI OHA - Ăn Kiêng/Ăn Sáng (Có Quả Khô)",
+      "unit": "HỘP",
+      "num": 3,
+      "price": 280000
+    }
+  ]
+}
