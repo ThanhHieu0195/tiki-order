@@ -38,9 +38,22 @@ function totalPrice(item) {
     params.phone || dataInfo.buyer.phone
   );
 
-  $("span:contains('{{orderDay}}')").html(dataInfo.order.day);
-  $("span:contains('{{orderMonth}}')").html(dataInfo.order.month);
-  $("span:contains('{{orderYear}}')").html(dataInfo.order.year);
+  const dayAgo =
+    params.day_ago != null
+      ? new Date(+new Date() - parseInt(params.day_ago) * 84600000)
+      : null;
+
+  const day =
+    dayAgo != null ? ("0" + dayAgo.getDate()).slice(-2) : dataInfo.order.day;
+  const month =
+    dayAgo != null
+      ? ("0" + (dayAgo.getMonth() + 1)).slice(-2)
+      : dataInfo.order.month;
+  const year = dayAgo != null ? dayAgo.getFullYear() : dataInfo.order.year;
+
+  $("span:contains('{{orderDay}}')").html(day);
+  $("span:contains('{{orderMonth}}')").html(month);
+  $("span:contains('{{orderYear}}')").html(year);
 
   $("b:contains('{{orderNumber}}')").html(makeid(10).toUpperCase());
   $("b:contains('{{orderNo}}')").html(

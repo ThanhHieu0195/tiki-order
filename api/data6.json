@@ -1,0 +1,20 @@
+{
+  "buyer": {
+    "phone": "xxxxx",
+    "name": "xxxxxu",
+    "address": "xxxxxx"
+  },
+  "order": {
+    "year": "2022",
+    "month": "05",
+    "day": "20"
+  },
+  "items": [
+    {
+      "name": "Bàn phím cơ Custom Keychron Q3 QMK TKL - Hàng Chính Hãng",
+      "unit": "CHIẾC",
+      "num": 1,
+      "price": 5700000
+    }
+  ]
+}

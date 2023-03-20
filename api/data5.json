@@ -1,0 +1,20 @@
+{
+  "buyer": {
+    "phone": "xxxxx",
+    "name": "xxxxxu",
+    "address": "xxxxxx"
+  },
+  "order": {
+    "year": "2022",
+    "month": "05",
+    "day": "20"
+  },
+  "items": [
+    {
+      "name": "Màn Hình Samsung 34\" LS34J550WQEXXV LED - Hàng Chính Hãng",
+      "unit": "CHIẾC",
+      "num": 1,
+      "price": 7400000
+    }
+  ]
+}
